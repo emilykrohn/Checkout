@@ -92,4 +92,4 @@ animations = [{
 
 [node name="Doors" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ak5lx")
-animation = &"close"
+animation = &"open"

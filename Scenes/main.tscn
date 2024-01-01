@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn85xf36fde3o"]
+[gd_scene load_steps=13 format=3 uid="uid://cn85xf36fde3o"]
 
 [ext_resource type="Texture2D" uid="uid://dms7xcdqhjqv8" path="res://Art/Background/Room_Builder_Floors_32x32.png" id="1_yb2tw"]
 [ext_resource type="Texture2D" uid="uid://clige3unx35bc" path="res://Art/Background/Room_Builder_Walls_32x32.png" id="2_w6jnh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7fkcsyqg75b4" path="res://Scenes/shelf.tscn" id="4_q4827"]
 [ext_resource type="PackedScene" uid="uid://bigtjchar0i65" path="res://Scenes/refrigerator.tscn" id="5_xs3l2"]
 [ext_resource type="PackedScene" uid="uid://ceicocortr3nw" path="res://Scenes/doors.tscn" id="6_17mcd"]
+[ext_resource type="PackedScene" uid="uid://d1kr2reaqxawp" path="res://Scenes/cash_register.tscn" id="8_cqbn1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j62xu"]
 texture = ExtResource("1_yb2tw")
@@ -6357,7 +6358,7 @@ layer_1/tile_data = PackedInt32Array(0, 131075, 4, 65536, 131075, 1, 131072, 131
 
 [node name="Doors" parent="game" instance=ExtResource("6_17mcd")]
 position = Vector2(544, 142)
-frame_progress = 0.0
+animation = &"closed"
 
 [node name="Wall" parent="game" instance=ExtResource("4_idwbm")]
 position = Vector2(549, 105)
@@ -6386,3 +6387,8 @@ position = Vector2(159, 189)
 
 [node name="Refrigerator3" parent="game/Refrigerators" instance=ExtResource("5_xs3l2")]
 position = Vector2(224, 190)
+
+[node name="CashRegisters" type="Node" parent="game"]
+
+[node name="CashRegister" parent="game/CashRegisters" instance=ExtResource("8_cqbn1")]
+position = Vector2(893, 223)
