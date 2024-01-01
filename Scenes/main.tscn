@@ -6337,7 +6337,7 @@ offset_bottom = 646.0
 
 [node name="game" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="game"]
+[node name="Background" type="TileMap" parent="game"]
 tile_set = SubResource("TileSet_f855w")
 cell_quadrant_size = 32
 format = 2
