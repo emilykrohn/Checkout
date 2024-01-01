@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cn85xf36fde3o"]
+
+[node name="main" type="Node"]
+
+[node name="title_screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="game_over" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="game" type="Node2D" parent="."]
