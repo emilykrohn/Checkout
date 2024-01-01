@@ -1,6 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceicocortr3nw"]
+[gd_scene load_steps=13 format=3 uid="uid://ceicocortr3nw"]
 
 [ext_resource type="Texture2D" uid="uid://bm8ak2tf5wcrt" path="res://Art/Doors/animated_door_glass_double_32x32.png" id="1_jhn2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gs1d"]
+atlas = ExtResource("1_jhn2t")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7akk"]
+atlas = ExtResource("1_jhn2t")
+region = Rect2(384, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqc11"]
+atlas = ExtResource("1_jhn2t")
+region = Rect2(448, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_floe5"]
+atlas = ExtResource("1_jhn2t")
+region = Rect2(0, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8pxrg"]
 atlas = ExtResource("1_jhn2t")
@@ -26,20 +42,25 @@ region = Rect2(192, 0, 64, 96)
 atlas = ExtResource("1_jhn2t")
 region = Rect2(256, 0, 64, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8iibw"]
-atlas = ExtResource("1_jhn2t")
-region = Rect2(320, 0, 64, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cn0n"]
-atlas = ExtResource("1_jhn2t")
-region = Rect2(384, 0, 64, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nisdi"]
-atlas = ExtResource("1_jhn2t")
-region = Rect2(448, 0, 64, 96)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ak5lx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gs1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7akk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqc11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_floe5")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8pxrg")
@@ -63,15 +84,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dsji0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8iibw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0cn0n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nisdi")
 }],
 "loop": true,
 "name": &"open",
@@ -80,5 +92,4 @@ animations = [{
 
 [node name="Doors" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ak5lx")
-animation = &"open"
-frame_progress = 0.929666
+animation = &"close"
