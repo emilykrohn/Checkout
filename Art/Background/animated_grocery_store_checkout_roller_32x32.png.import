@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmcca7bjjx4yc"
-path="res://.godot/imported/animated_grocery_store_checkout_roller_32x32.png-5e04add6bc8dc5e9a5c19d72ca000ff5.ctex"
+path="res://.godot/imported/animated_grocery_store_checkout_roller_32x32.png-2396dfe9014e80f6b663c2129ee64739.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/animated_grocery_store_checkout_roller_32x32.png"
-dest_files=["res://.godot/imported/animated_grocery_store_checkout_roller_32x32.png-5e04add6bc8dc5e9a5c19d72ca000ff5.ctex"]
+source_file="res://Art/Background/animated_grocery_store_checkout_roller_32x32.png"
+dest_files=["res://.godot/imported/animated_grocery_store_checkout_roller_32x32.png-2396dfe9014e80f6b663c2129ee64739.ctex"]
 
 [params]
 

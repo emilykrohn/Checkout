@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0jexwm3t3dny"
-path="res://.godot/imported/16_Grocery_store_32x32.png-2162c98613e91059b0ecc82735246d36.ctex"
+uid="uid://clige3unx35bc"
+path="res://.godot/imported/Room_Builder_Walls_32x32.png-eb57c2945f718cae6f3290c69a5cd3ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/16_Grocery_store_32x32.png"
-dest_files=["res://.godot/imported/16_Grocery_store_32x32.png-2162c98613e91059b0ecc82735246d36.ctex"]
+source_file="res://Art/Background/Room_Builder_Walls_32x32.png"
+dest_files=["res://.godot/imported/Room_Builder_Walls_32x32.png-eb57c2945f718cae6f3290c69a5cd3ac.ctex"]
 
 [params]
 
