@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://df51vnufccptg"]
+[gd_scene load_steps=3 format=3 uid="uid://df51vnufccptg"]
 
 [ext_resource type="PackedScene" uid="uid://d357t5etjotj2" path="res://Scenes/Customers/customer_2.tscn" id="1_4bjgk"]
+[ext_resource type="Script" path="res://Scripts/Customers/customer_path.gd" id="1_d2h3j"]
 
 [node name="Customer2Path" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_d2h3j")
 
 [node name="Customer2" parent="." instance=ExtResource("1_4bjgk")]

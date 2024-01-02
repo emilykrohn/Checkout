@@ -6326,17 +6326,17 @@ sources/0 = SubResource("TileSetAtlasSource_j62xu")
 sources/2 = SubResource("TileSetAtlasSource_yhub7")
 sources/3 = SubResource("TileSetAtlasSource_ulu53")
 
+[sub_resource type="Curve2D" id="Curve2D_kbyc2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 544, 79, 0, 0, 0, 0, 543, 351, 0, 0, 0, 0, 287, 351, 0, 0, 0, 0, 287, 501, 0, 0, 0, 0, 287, 607, 0, 0, 0, 0, 799, 607, 0, 0, 0, 0, 799, 265, 0, 0, 0, 0, 1157, 271)
+}
+point_count = 8
+
 [sub_resource type="Curve2D" id="Curve2D_m4jed"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 545, 78, 0, 0, 0, 0, 541, 238, 0, 0, 0, 0, 96, 238, 0, 0, 0, 0, 94, 607, 0, 0, 0, 0, 797, 607, 0, 0, 0, 0, 800, 265, 0, 0, 0, 0, 1161, 270)
 }
 point_count = 7
-
-[sub_resource type="Curve2D" id="Curve2D_kbyc2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 544, 79, 0, 0, 0, 0, 543, 351, 0, 0, 0, 0, 288, 351, 0, 0, 0, 0, 287, 501, 0, 0, 0, 0, 288, 608, 0, 0, 0, 0, 799, 607, 0, 0, 0, 0, 799, 265, 0, 0, 0, 0, 1157, 271)
-}
-point_count = 8
 
 [node name="main" type="Node"]
 
@@ -6408,10 +6408,10 @@ position = Vector2(893, 223)
 
 [node name="Paths" type="Node" parent="game"]
 
+[node name="Path2D" type="Path2D" parent="game/Paths"]
+curve = SubResource("Curve2D_kbyc2")
+
 [node name="Path2D2" type="Path2D" parent="game/Paths"]
 rotation = -0.00043908
 scale = Vector2(1, 1)
 curve = SubResource("Curve2D_m4jed")
-
-[node name="Path2D" type="Path2D" parent="game/Paths"]
-curve = SubResource("Curve2D_kbyc2")
