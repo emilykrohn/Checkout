@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://beegikn7ed3cj"]
+
+[ext_resource type="PackedScene" uid="uid://lwloh4kolh7u" path="res://Scenes/Customers/customer_1.tscn" id="1_qif70"]
+
+[node name="Customer1Path" type="PathFollow2D"]
+
+[node name="Customer1" parent="." instance=ExtResource("1_qif70")]
