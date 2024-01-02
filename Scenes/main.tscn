@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn85xf36fde3o"]
+[gd_scene load_steps=16 format=3 uid="uid://cn85xf36fde3o"]
 
 [ext_resource type="Texture2D" uid="uid://dms7xcdqhjqv8" path="res://Art/Background/Room_Builder_Floors_32x32.png" id="1_yb2tw"]
 [ext_resource type="Texture2D" uid="uid://clige3unx35bc" path="res://Art/Background/Room_Builder_Walls_32x32.png" id="2_w6jnh"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bigtjchar0i65" path="res://Scenes/refrigerator.tscn" id="5_xs3l2"]
 [ext_resource type="PackedScene" uid="uid://ceicocortr3nw" path="res://Scenes/doors.tscn" id="6_17mcd"]
 [ext_resource type="PackedScene" uid="uid://d1kr2reaqxawp" path="res://Scenes/cash_register.tscn" id="8_cqbn1"]
+[ext_resource type="Script" path="res://Scripts/Paths.gd" id="9_gnob1"]
+[ext_resource type="PackedScene" uid="uid://de04584rk71t7" path="res://Scenes/Paths/path_1.tscn" id="10_ctnk3"]
+[ext_resource type="PackedScene" uid="uid://btutjw65pyvc4" path="res://Scenes/Paths/path_2.tscn" id="11_1ovdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j62xu"]
 texture = ExtResource("1_yb2tw")
@@ -6326,18 +6329,6 @@ sources/0 = SubResource("TileSetAtlasSource_j62xu")
 sources/2 = SubResource("TileSetAtlasSource_yhub7")
 sources/3 = SubResource("TileSetAtlasSource_ulu53")
 
-[sub_resource type="Curve2D" id="Curve2D_kbyc2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 544, 79, 0, 0, 0, 0, 543, 351, 0, 0, 0, 0, 287, 351, 0, 0, 0, 0, 287, 501, 0, 0, 0, 0, 287, 607, 0, 0, 0, 0, 799, 607, 0, 0, 0, 0, 799, 265, 0, 0, 0, 0, 1157, 271)
-}
-point_count = 8
-
-[sub_resource type="Curve2D" id="Curve2D_m4jed"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 545, 78, 0, 0, 0, 0, 541, 238, 0, 0, 0, 0, 96, 238, 0, 0, 0, 0, 94, 607, 0, 0, 0, 0, 797, 607, 0, 0, 0, 0, 800, 265, 0, 0, 0, 0, 1161, 270)
-}
-point_count = 7
-
 [node name="main" type="Node"]
 
 [node name="title_screen" type="Control" parent="."]
@@ -6407,11 +6398,14 @@ position = Vector2(224, 190)
 position = Vector2(893, 223)
 
 [node name="Paths" type="Node" parent="game"]
+script = ExtResource("9_gnob1")
 
-[node name="Path2D" type="Path2D" parent="game/Paths"]
-curve = SubResource("Curve2D_kbyc2")
+[node name="Path1" parent="game/Paths" instance=ExtResource("10_ctnk3")]
 
-[node name="Path2D2" type="Path2D" parent="game/Paths"]
-rotation = -0.00043908
-scale = Vector2(1, 1)
-curve = SubResource("Curve2D_m4jed")
+[node name="Path2" parent="game/Paths" instance=ExtResource("11_1ovdg")]
+
+[node name="Timer" type="Timer" parent="game/Paths"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="game/Paths/Timer" to="game/Paths" method="_on_timer_timeout"]
