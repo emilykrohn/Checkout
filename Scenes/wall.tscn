@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgtqfnodr0pjv"]
+
+[ext_resource type="Texture2D" uid="uid://clige3unx35bc" path="res://Art/Background/Room_Builder_Walls_32x32.png" id="1_sqv2b"]
+
+[node name="Wall" type="Sprite2D"]
+position = Vector2(62.5, -19.5)
+scale = Vector2(8.8125, 3.4375)
+texture = ExtResource("1_sqv2b")
+region_enabled = true
+region_rect = Rect2(48, 224, 16, 16)

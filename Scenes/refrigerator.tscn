@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://bigtjchar0i65"]
+
+[ext_resource type="Texture2D" uid="uid://d0jexwm3t3dny" path="res://Art/Background/16_Grocery_store_32x32.png" id="1_kfict"]
+[ext_resource type="Texture2D" uid="uid://m3svw2yxs6tj" path="res://Art/Doors/animated_grocery_store_fridge_glass_both_32x32.png" id="2_fny0g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2rcf"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjslh"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr2i1"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bh7y"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw5x1"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qifgj"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_athw3"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maicr"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn4w1"]
+atlas = ExtResource("2_fny0g")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssxg7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2rcf")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjslh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr2i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bh7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw5x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qifgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_athw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maicr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn4w1")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnpxa"]
+size = Vector2(52, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lytqk"]
+size = Vector2(25, 32)
+
+[node name="Refrigerator" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kfict")
+region_enabled = true
+region_rect = Rect2(384, 192, 64, 96)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 16)
+sprite_frames = SubResource("SpriteFrames_ssxg7")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_xnpxa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 14)
+shape = SubResource("RectangleShape2D_lytqk")
