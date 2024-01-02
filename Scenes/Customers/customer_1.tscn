@@ -396,7 +396,7 @@ gravity_scale = 0.0
 
 [node name="WalkAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bg074")
-animation = &"walk_up"
+animation = &"walk_down"
 
 [node name="GrabAnimation" type="AnimatedSprite2D" parent="."]
 visible = false
