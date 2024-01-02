@@ -6364,6 +6364,7 @@ position = Vector2(544, 142)
 animation = &"closed"
 
 [node name="Wall" parent="game" instance=ExtResource("4_idwbm")]
+z_index = 1
 position = Vector2(544.75, 77)
 scale = Vector2(9.34375, 7)
 
