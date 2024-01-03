@@ -83,7 +83,7 @@ animations = [{
 size = Vector2(52, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lytqk"]
-size = Vector2(25, 32)
+size = Vector2(10, 32)
 
 [node name="Refrigerator" type="StaticBody2D"]
 
@@ -104,5 +104,5 @@ shape = SubResource("RectangleShape2D_xnpxa")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 14)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_lytqk")
