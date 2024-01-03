@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://lwloh4kolh7u"]
+[gd_scene load_steps=57 format=3 uid="uid://lwloh4kolh7u"]
 
 [ext_resource type="Script" path="res://Scripts/Customers/customer_1.gd" id="1_33ehh"]
 [ext_resource type="Texture2D" uid="uid://bkrwprqch6csk" path="res://Art/Characters/Premade_Character_32x32_03.png" id="1_j3ceb"]
@@ -391,6 +391,10 @@ size = Vector2(19, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2ygc"]
 size = Vector2(17, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvox8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gse6k"]
+
 [node name="Customer1" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
@@ -416,9 +420,22 @@ shape = SubResource("RectangleShape2D_grfcp")
 position = Vector2(1.5, 6.5)
 shape = SubResource("RectangleShape2D_b2ygc")
 
+[node name="CustomerDetector" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerDetector"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_rvox8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CustomerDetector"]
+position = Vector2(-26, 1)
+shape = SubResource("RectangleShape2D_gse6k")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
 [connection signal="area_entered" from="ObjectDetector" to="." method="_on_object_detector_area_entered"]
+[connection signal="body_entered" from="CustomerDetector" to="." method="_on_customer_detector_body_entered"]
+[connection signal="body_exited" from="CustomerDetector" to="." method="_on_customer_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6343,7 +6343,7 @@ anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 646.0
 
-[node name="game" type="Node2D" parent="."]
+[node name="game" type="Node2D" parent="." groups=["Customers"]]
 
 [node name="Background" type="TileMap" parent="game"]
 tile_set = SubResource("TileSet_f855w")
@@ -6364,6 +6364,7 @@ position = Vector2(544, 142)
 animation = &"closed"
 
 [node name="Wall" parent="game" instance=ExtResource("4_idwbm")]
+visible = false
 z_index = 1
 position = Vector2(544.75, 77)
 scale = Vector2(9.34375, 7)

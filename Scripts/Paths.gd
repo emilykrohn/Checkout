@@ -8,4 +8,5 @@ var customers = [customer1, customer2]
 
 
 func _on_timer_timeout():
-	paths[randi() % paths.size()].add_child(customers[randi() % customers.size()].instantiate())
+	var customer = customers[randi() % customers.size()].instantiate()
+	paths[randi() % paths.size()].add_child(customer)
