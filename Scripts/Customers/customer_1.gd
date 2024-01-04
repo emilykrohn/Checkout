@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @onready var last_position = global_position
+@onready var sprite = $WalkAnimation
 
 func _ready():
 	add_to_group("Customers")
@@ -13,12 +14,16 @@ func _process(delta):
 func customer_detector(direction: Vector2):
 	if direction.x < 0 and abs(direction.x) > abs(direction.y):
 		$CustomerDetector/Right.visible = true
+		sprite.play("walk_right")
 	if direction.x > 0 and abs(direction.x) > abs(direction.y):
 		$CustomerDetector/Left.visible = true
+		sprite.play("walk_left")
 	if direction.y < 0 and abs(direction.y) > abs(direction.x):
 		$CustomerDetector/Down.visible = true
+		sprite.play("walk_down")
 	if direction.y > 0 and abs(direction.y) > abs(direction.x):
 		$CustomerDetector/Up.visible = true
+		sprite.play("walk_up")
 
 func hide_customer_detectors():
 	$CustomerDetector/Down.hide()
