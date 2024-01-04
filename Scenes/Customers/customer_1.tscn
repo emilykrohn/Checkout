@@ -411,7 +411,7 @@ position = Vector2(0, 12)
 sprite_frames = SubResource("SpriteFrames_rfh5p")
 animation = &"GrabUp"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Customer" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_grfcp")
 
@@ -430,7 +430,6 @@ position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_rvox8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Down"]
-position = Vector2(1, 4)
 scale = Vector2(0.148438, 0.140625)
 texture = ExtResource("3_srjs2")
 
@@ -440,8 +439,8 @@ position = Vector2(29, 7)
 shape = SubResource("RectangleShape2D_gse6k")
 
 [node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Right"]
-position = Vector2(-1, 2)
-scale = Vector2(0.195313, 0.179688)
+position = Vector2(-1.75, 1.25)
+scale = Vector2(0.183594, 0.191406)
 texture = ExtResource("3_srjs2")
 
 [node name="Left" type="CollisionShape2D" parent="CustomerDetector"]
@@ -450,8 +449,8 @@ position = Vector2(-29, 7)
 shape = SubResource("RectangleShape2D_gse6k")
 
 [node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Left"]
-position = Vector2(-3, 0)
-scale = Vector2(0.226563, 0.210938)
+position = Vector2(0.750001, 0)
+scale = Vector2(0.167969, 0.210938)
 texture = ExtResource("3_srjs2")
 
 [node name="Up" type="CollisionShape2D" parent="CustomerDetector"]
@@ -460,8 +459,8 @@ position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_gse6k")
 
 [node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Up"]
-position = Vector2(-1, 1)
-scale = Vector2(0.148438, 0.164063)
+position = Vector2(-1, 0.75)
+scale = Vector2(0.148438, 0.167969)
 texture = ExtResource("3_srjs2")
 
 [node name="Timer" type="Timer" parent="."]

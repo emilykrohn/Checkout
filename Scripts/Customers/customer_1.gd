@@ -35,9 +35,9 @@ func _on_timer_timeout():
 	get_parent().can_move = true
 
 func _on_customer_detector_body_entered(body):
-	if body.is_in_group("Customers"):
+	if body.name == "Customer":
 		get_parent().can_move = false
 
 func _on_customer_detector_body_exited(body):
-	if body.is_in_group("Customers"):
+	if body.name == "Customer":
 		get_parent().can_move = true
