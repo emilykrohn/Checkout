@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://lwloh4kolh7u"]
+[gd_scene load_steps=58 format=3 uid="uid://lwloh4kolh7u"]
 
 [ext_resource type="Script" path="res://Scripts/Customers/customer_1.gd" id="1_33ehh"]
 [ext_resource type="Texture2D" uid="uid://bkrwprqch6csk" path="res://Art/Characters/Premade_Character_32x32_03.png" id="1_j3ceb"]
+[ext_resource type="Texture2D" uid="uid://c2kvj0exiggia" path="res://Art/icon.svg" id="3_srjs2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40rec"]
 atlas = ExtResource("1_j3ceb")
@@ -423,13 +424,45 @@ shape = SubResource("RectangleShape2D_b2ygc")
 [node name="CustomerDetector" type="Area2D" parent="."]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerDetector"]
+[node name="Down" type="CollisionShape2D" parent="CustomerDetector"]
+visible = false
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_rvox8")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CustomerDetector"]
-position = Vector2(-26, 1)
+[node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Down"]
+position = Vector2(1, 4)
+scale = Vector2(0.148438, 0.140625)
+texture = ExtResource("3_srjs2")
+
+[node name="Right" type="CollisionShape2D" parent="CustomerDetector"]
+visible = false
+position = Vector2(29, 7)
 shape = SubResource("RectangleShape2D_gse6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Right"]
+position = Vector2(-1, 2)
+scale = Vector2(0.195313, 0.179688)
+texture = ExtResource("3_srjs2")
+
+[node name="Left" type="CollisionShape2D" parent="CustomerDetector"]
+visible = false
+position = Vector2(-29, 7)
+shape = SubResource("RectangleShape2D_gse6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Left"]
+position = Vector2(-3, 0)
+scale = Vector2(0.226563, 0.210938)
+texture = ExtResource("3_srjs2")
+
+[node name="Up" type="CollisionShape2D" parent="CustomerDetector"]
+visible = false
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_gse6k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CustomerDetector/Up"]
+position = Vector2(-1, 1)
+scale = Vector2(0.148438, 0.164063)
+texture = ExtResource("3_srjs2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
