@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cn85xf36fde3o"]
+[gd_scene load_steps=17 format=3 uid="uid://cn85xf36fde3o"]
 
 [ext_resource type="Texture2D" uid="uid://dms7xcdqhjqv8" path="res://Art/Background/Room_Builder_Floors_32x32.png" id="1_yb2tw"]
 [ext_resource type="Texture2D" uid="uid://clige3unx35bc" path="res://Art/Background/Room_Builder_Walls_32x32.png" id="2_w6jnh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7fkcsyqg75b4" path="res://Scenes/shelf.tscn" id="4_q4827"]
 [ext_resource type="PackedScene" uid="uid://bigtjchar0i65" path="res://Scenes/refrigerator.tscn" id="5_xs3l2"]
 [ext_resource type="PackedScene" uid="uid://ceicocortr3nw" path="res://Scenes/doors.tscn" id="6_17mcd"]
+[ext_resource type="Script" path="res://Scripts/MoneyLabel.gd" id="6_53bie"]
 [ext_resource type="PackedScene" uid="uid://d1kr2reaqxawp" path="res://Scenes/cash_register.tscn" id="8_cqbn1"]
 [ext_resource type="Script" path="res://Scripts/Paths.gd" id="9_gnob1"]
 [ext_resource type="PackedScene" uid="uid://de04584rk71t7" path="res://Scenes/Paths/path_1.tscn" id="10_ctnk3"]
@@ -6375,7 +6376,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="game/Control"]
-z_index = 2
+layout_mode = 0
 offset_left = 20.0
 offset_top = 21.0
 offset_right = 439.0
@@ -6385,10 +6386,11 @@ offset_bottom = 93.0
 layout_mode = 0
 offset_left = 10.0
 offset_top = 9.0
-offset_right = 229.0
-offset_bottom = 74.0
+offset_right = 406.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 35
 text = "Money:"
+script = ExtResource("6_53bie")
 
 [node name="Panel2" type="Panel" parent="game/Control"]
 layout_mode = 0

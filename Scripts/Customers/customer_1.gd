@@ -47,6 +47,7 @@ func customer_detector(direction: Vector2):
 
 func _on_object_detector_area_entered(area):
 	if area.name == "Object":
+		$"../../../../Control/Panel/MoneyLabel".amount += 1
 		cooldown = false
 		get_parent().can_move = false
 		$Timer.start()
