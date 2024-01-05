@@ -3,7 +3,7 @@ extends Node
 var customer1 = preload("res://Scenes/CustomerPaths/customer_1_path.tscn")
 var customer2 = preload("res://Scenes/CustomerPaths/customer_2_path.tscn")
 
-var customers = [customer1, customer2]
+var customers = [customer1]
 @onready var paths = [$Path1, $Path2]
 
 
