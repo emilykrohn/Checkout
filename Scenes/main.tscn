@@ -6368,6 +6368,62 @@ z_index = 1
 position = Vector2(544.75, 77)
 scale = Vector2(9.34375, 7)
 
+[node name="Control" type="Control" parent="game"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="game/Control"]
+z_index = 2
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 439.0
+offset_bottom = 93.0
+
+[node name="MoneyLabel" type="Label" parent="game/Control/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 229.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 35
+text = "Money:"
+
+[node name="Panel2" type="Panel" parent="game/Control"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 18.0
+offset_right = 1129.0
+offset_bottom = 91.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="game/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -22.5
+offset_right = -13.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="game/Control/Panel2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "Pressure Level:  "
+
+[node name="ProgressBar" type="ProgressBar" parent="game/Control/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
 [node name="Shelves" type="Node" parent="game"]
 
 [node name="Shelf" parent="game/Shelves" instance=ExtResource("4_q4827")]
