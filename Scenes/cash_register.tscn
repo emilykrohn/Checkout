@@ -19,8 +19,8 @@ region_rect = Rect2(192, 768, 96, 64)
 position = Vector2(2, 7)
 shape = SubResource("RectangleShape2D_tsnkq")
 
-[node name="Object" type="Area2D" parent="."]
+[node name="Register" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Register"]
 position = Vector2(-0.5, 28)
 shape = SubResource("RectangleShape2D_isob2")

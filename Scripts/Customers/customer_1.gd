@@ -3,8 +3,10 @@ extends RigidBody2D
 @onready var last_position = global_position
 @onready var walk_sprite = $WalkAnimation
 @onready var grab_sprite = $GrabAnimation
+
 var grab_direction := ""
 var cooldown := true
+var total := 0
 
 var is_up := false
 var is_right := false
@@ -47,7 +49,13 @@ func customer_detector(direction: Vector2):
 
 func _on_object_detector_area_entered(area):
 	if area.name == "Object":
-		$"../../../../Control/Panel/MoneyLabel".amount += 1
+		total += 1
+		cooldown = false
+		get_parent().can_move = false
+		$Timer.start()
+	if area.name == "Register":
+		grab_direction = "grab_up"
+		$"../../../../Control/Panel/MoneyLabel".amount += total
 		cooldown = false
 		get_parent().can_move = false
 		$Timer.start()
