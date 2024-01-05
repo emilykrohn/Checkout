@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bigtjchar0i65"]
+[gd_scene load_steps=16 format=3 uid="uid://bigtjchar0i65"]
 
+[ext_resource type="Script" path="res://Scripts/Objects/refrigerator.gd" id="1_iu05e"]
 [ext_resource type="Texture2D" uid="uid://d0jexwm3t3dny" path="res://Art/Background/16_Grocery_store_32x32.png" id="1_kfict"]
 [ext_resource type="Texture2D" uid="uid://m3svw2yxs6tj" path="res://Art/Doors/animated_grocery_store_fridge_glass_both_32x32.png" id="2_fny0g"]
 
@@ -83,9 +84,10 @@ animations = [{
 size = Vector2(52, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lytqk"]
-size = Vector2(25, 32)
+size = Vector2(10, 68)
 
 [node name="Refrigerator" type="StaticBody2D"]
+script = ExtResource("1_iu05e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kfict")
@@ -101,8 +103,10 @@ animation = &"closed"
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_xnpxa")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Object" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 14)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+position = Vector2(-6, 32)
 shape = SubResource("RectangleShape2D_lytqk")
+
+[connection signal="body_entered" from="Object" to="." method="_on_object_body_entered"]

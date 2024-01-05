@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cn85xf36fde3o"]
+[gd_scene load_steps=16 format=3 uid="uid://cn85xf36fde3o"]
 
 [ext_resource type="Texture2D" uid="uid://dms7xcdqhjqv8" path="res://Art/Background/Room_Builder_Floors_32x32.png" id="1_yb2tw"]
 [ext_resource type="Texture2D" uid="uid://clige3unx35bc" path="res://Art/Background/Room_Builder_Walls_32x32.png" id="2_w6jnh"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bigtjchar0i65" path="res://Scenes/refrigerator.tscn" id="5_xs3l2"]
 [ext_resource type="PackedScene" uid="uid://ceicocortr3nw" path="res://Scenes/doors.tscn" id="6_17mcd"]
 [ext_resource type="PackedScene" uid="uid://d1kr2reaqxawp" path="res://Scenes/cash_register.tscn" id="8_cqbn1"]
+[ext_resource type="Script" path="res://Scripts/Paths.gd" id="9_gnob1"]
+[ext_resource type="PackedScene" uid="uid://de04584rk71t7" path="res://Scenes/Paths/path_1.tscn" id="10_ctnk3"]
+[ext_resource type="PackedScene" uid="uid://btutjw65pyvc4" path="res://Scenes/Paths/path_2.tscn" id="11_1ovdg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j62xu"]
 texture = ExtResource("1_yb2tw")
@@ -6340,7 +6343,7 @@ anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 646.0
 
-[node name="game" type="Node2D" parent="."]
+[node name="game" type="Node2D" parent="." groups=["Customers"]]
 
 [node name="Background" type="TileMap" parent="game"]
 tile_set = SubResource("TileSet_f855w")
@@ -6361,7 +6364,9 @@ position = Vector2(544, 142)
 animation = &"closed"
 
 [node name="Wall" parent="game" instance=ExtResource("4_idwbm")]
-position = Vector2(549, 105)
+z_index = 1
+position = Vector2(544.75, 77)
+scale = Vector2(9.34375, 7)
 
 [node name="Shelves" type="Node" parent="game"]
 
@@ -6392,3 +6397,16 @@ position = Vector2(224, 190)
 
 [node name="CashRegister" parent="game/CashRegisters" instance=ExtResource("8_cqbn1")]
 position = Vector2(893, 223)
+
+[node name="Paths" type="Node" parent="game"]
+script = ExtResource("9_gnob1")
+
+[node name="Path1" parent="game/Paths" instance=ExtResource("10_ctnk3")]
+
+[node name="Path2" parent="game/Paths" instance=ExtResource("11_1ovdg")]
+
+[node name="Timer" type="Timer" parent="game/Paths"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="game/Paths/Timer" to="game/Paths" method="_on_timer_timeout"]
