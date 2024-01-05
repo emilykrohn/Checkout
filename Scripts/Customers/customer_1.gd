@@ -55,7 +55,7 @@ func _on_object_detector_area_entered(area):
 		$Timer.start()
 	if area.name == "Register":
 		grab_direction = "grab_up"
-		$"../../../../Control/Panel/MoneyLabel".amount += total
+		$"../../../../Control".amount += total
 		cooldown = false
 		get_parent().can_move = false
 		$Timer.start()
