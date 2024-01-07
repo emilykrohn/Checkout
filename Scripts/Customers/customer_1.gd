@@ -7,6 +7,7 @@ extends RigidBody2D
 var grab_direction := ""
 var cooldown := true
 var total := 0
+var pressure_cooldown := false
 
 var is_up := false
 var is_right := false
@@ -21,6 +22,9 @@ func _process(_delta):
 	last_position = global_position
 	if not is_right and not is_left and not is_down and not is_up and cooldown:
 		get_parent().can_move = true
+	if get_parent().progress_ratio > 0.6 and get_parent().progress_ratio < 0.78 and get_parent().can_move == false and pressure_cooldown:
+		$"../../../../Control".level += 1
+		pressure_cooldown = false
 
 func customer_detector(direction: Vector2):
 	if direction.x < 0 and abs(direction.x) > abs(direction.y):
@@ -99,3 +103,6 @@ func _on_customer_detector_left_body_entered(body):
 func _on_customer_detector_left_body_exited(body):
 	if body.name == "Customer1":
 		is_left = false
+
+func _on_pressure_cooldown_timeout():
+	pressure_cooldown = true

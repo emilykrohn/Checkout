@@ -6344,7 +6344,7 @@ anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 646.0
 
-[node name="game" type="Node2D" parent="." groups=["Customers"]]
+[node name="game" type="Node2D" parent="." groups=["Customers", "WaitingCustomers"]]
 
 [node name="Background" type="TileMap" parent="game"]
 tile_set = SubResource("TileSet_f855w")

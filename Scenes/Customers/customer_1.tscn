@@ -460,6 +460,10 @@ shape = SubResource("RectangleShape2D_ebglh")
 wait_time = 0.5
 one_shot = true
 
+[node name="PressureCooldown" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="area_entered" from="ObjectDetector" to="." method="_on_object_detector_area_entered"]
 [connection signal="body_entered" from="CustomerDetectorUp" to="." method="_on_customer_detector_up_body_entered"]
 [connection signal="body_exited" from="CustomerDetectorUp" to="." method="_on_customer_detector_up_body_exited"]
@@ -470,3 +474,4 @@ one_shot = true
 [connection signal="body_entered" from="CustomerDetectorLeft" to="." method="_on_customer_detector_left_body_entered"]
 [connection signal="body_exited" from="CustomerDetectorLeft" to="." method="_on_customer_detector_left_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PressureCooldown" to="." method="_on_pressure_cooldown_timeout"]
